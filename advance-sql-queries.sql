@@ -1,8 +1,9 @@
-SELECT paymentDate, SUM(amount) AS total_amount
+SELECT paymentDate, SUM(amount) AS total_payment
 FROM payments
 GROUP BY paymentDate
-ORDER BY paymentDate DESC
-HAVING SUM(amount) > 50000;
+HAVING SUM(amount) > 50000
+ORDER BY total_payment DESC
+LIMIT 5;
 
 -- question2
 SELECT customerName, country, AVG(creditLimit) AS average_credit_limit
